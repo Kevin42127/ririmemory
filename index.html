@@ -1,0 +1,285 @@
+<!DOCTYPE html><html lang="ja"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>りり</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&amp;family=Quicksand:wght@500;600;700&amp;family=Be+Vietnam+Pro:wght@400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "background": "#fdf7ff",
+                    "on-secondary": "#ffffff",
+                    "surface-bright": "#fdf7ff",
+                    "tertiary-container": "#cbcac7",
+                    "surface-tint": "#864e5a",
+                    "on-primary-container": "#7b4551",
+                    "error": "#ba1a1a",
+                    "outline": "#837375",
+                    "tertiary-fixed": "#e3e2e0",
+                    "on-primary-fixed": "#360c19",
+                    "surface": "#fdf7ff",
+                    "on-secondary-fixed-variant": "#144c61",
+                    "primary": "#864e5a",
+                    "on-error": "#ffffff",
+                    "on-tertiary-container": "#545553",
+                    "tertiary": "#5e5f5d",
+                    "on-primary-fixed-variant": "#6b3743",
+                    "on-surface": "#1d192a",
+                    "secondary-fixed": "#bee9ff",
+                    "on-error-container": "#93000a",
+                    "inverse-primary": "#fbb3c1",
+                    "surface-variant": "#e8dff7",
+                    "tertiary-fixed-dim": "#c7c6c4",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-fixed": "#001f2a",
+                    "inverse-on-surface": "#f5eeff",
+                    "secondary-container": "#b2e4fe",
+                    "on-background": "#1d192a",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary": "#31647a",
+                    "surface-container-high": "#ede4fd",
+                    "surface-container-low": "#f8f1ff",
+                    "outline-variant": "#d6c2c4",
+                    "on-surface-variant": "#514345",
+                    "error-container": "#ffdad6",
+                    "surface-dim": "#dfd6ee",
+                    "primary-fixed-dim": "#fbb3c1",
+                    "on-tertiary-fixed-variant": "#464745",
+                    "primary-container": "#ffb7c5",
+                    "secondary-fixed-dim": "#9ccee6",
+                    "surface-container-highest": "#e8dff7",
+                    "inverse-surface": "#332e40",
+                    "on-secondary-container": "#34677d",
+                    "on-primary": "#ffffff",
+                    "surface-container": "#f3eaff",
+                    "primary-fixed": "#ffd9df",
+                    "on-tertiary-fixed": "#1a1c1a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px",
+                    "kawaii": "32px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "container-max": "1200px",
+                    "margin-mobile": "20px",
+                    "margin-desktop": "40px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Quicksand"],
+                    "body-md": ["Be Vietnam Pro"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "accent-handwritten": ["Quicksand"],
+                    "display-lg-mobile": ["Plus Jakarta Sans"],
+                    "display-lg": ["Plus Jakarta Sans"],
+                    "body-lg": ["Be Vietnam Pro"]
+            },
+            "fontSize": {
+                    "label-sm": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "accent-handwritten": ["20px", {"lineHeight": "24px", "fontWeight": "500"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            background-color: #fdf7ff;
+            color: #1d192a;
+            overflow-x: hidden;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .heart-pulse {
+            animation: pulse 2s infinite ease-in-out;
+            display: inline-block;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); filter: drop-shadow(0 0 0 rgba(134, 78, 90, 0)); }
+            50% { transform: scale(1.1); filter: drop-shadow(0 0 15px rgba(255, 183, 197, 0.6)); }
+            100% { transform: scale(1); filter: drop-shadow(0 0 0 rgba(134, 78, 90, 0)); }
+        }
+        .float-gentle {
+            animation: float 6s infinite ease-in-out;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .stationery-line {
+            background-image: repeating-linear-gradient(transparent, transparent 31px, #d6c2c4 31px, #d6c2c4 32px);
+            background-size: 100% 32px;
+            line-height: 32px;
+            padding-top: 0;
+        }
+        .bento-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .bento-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0px 20px 40px rgba(255, 183, 197, 0.25);
+        }
+        .heart-particle {
+            position: absolute;
+            pointer-events: none;
+            user-select: none;
+            z-index: 50;
+            animation: heartFloat 1.5s ease-out forwards;
+        }
+        @keyframes heartFloat {
+            0% {
+                transform: translate(-50%, -50%) scale(0.5);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(var(--tw-translateX), var(--tw-translateY)) scale(var(--tw-scale));
+                opacity: 0;
+            }
+        }
+        .click-pulse {
+            animation: clickPulse 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        @keyframes clickPulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.4); }
+            100% { transform: scale(1); }
+        }
+        .number-bounce {
+            animation: numberBounce 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: inline-block;
+        }
+        @keyframes numberBounce {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px) scale(1.2); color: #864e5a; }
+            100% { transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="selection:bg-primary-container selection:text-on-primary-container">
+<!-- Password Overlay -->
+<div id="password-overlay" class="fixed inset-0 bg-[#fdf7ff] z-50 flex items-center justify-center">
+<div class="bg-white rounded-[20px] p-8 md:p-12 shadow-2xl max-w-md w-full mx-4">
+<div class="text-center mb-8">
+<h1 class="font-display-lg text-display-lg text-primary mb-4">🔐</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mb-2">あなただけに伝えたい想いがあります。ヒント（0617）を入力して、開いてみてください。</p>
+</div>
+<div class="space-y-4">
+<input type="password" id="password-input" class="w-full px-6 py-4 rounded-full border-2 border-primary/20 focus:border-primary focus:outline-none font-body-lg text-body-lg text-center" placeholder="パスワード" maxlength="4" inputmode="numeric">
+<button onclick="checkPassword()" class="w-full bg-primary text-white px-8 py-4 rounded-full font-label-sm text-label-sm hover:bg-primary/90 transition-all shadow-lg">
+            解除
+</button>
+<p id="error-message" class="text-red-500 text-center font-body-sm text-body-sm hidden">パスワードが間違っています</p>
+</div>
+</div>
+</div>
+<!-- Main Content (hidden until unlocked) -->
+<div id="main-content" class="hidden">
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center justify-center pt-16 md:pt-20 px-gutter overflow-hidden">
+<div class="relative z-10 text-center max-w-3xl">
+<h1 class="font-display-lg text-display-lg md:text-[64px] text-primary mb-4 md:mb-6 leading-tight">
+            りり <br>
+<span class="text-secondary font-accent-handwritten">この手紙を読んでくれてありがとう</span>
+</h1>
+<p class="font-body-md md:font-body-lg text-body-lg text-on-surface-variant mb-6 md:mb-10 max-w-xl mx-auto">
+        </p>
+<div class="flex flex-wrap justify-center gap-4">
+<a class="bg-primary text-white px-8 py-4 rounded-full font-label-sm text-label-sm shadow-lg hover:shadow-xl transition-all flex items-center gap-2" href="#letter">続きを読む <span class="material-symbols-outlined">arrow_downward</span></a>
+</div>
+</div>
+<!-- Floating Elements -->
+<div class="absolute top-1/4 left-10 float-gentle opacity-60">
+<span class="material-symbols-outlined text-primary-container text-6xl" style="font-variation-settings: 'FILL' 1;">spa</span>
+</div>
+<div class="absolute bottom-1/4 right-10 float-gentle opacity-60" style="animation-delay: 2s;">
+<span class="material-symbols-outlined text-secondary-container text-6xl" style="font-variation-settings: 'FILL' 1;">cloud</span>
+</div>
+</section>
+<!-- Letter Section -->
+<section class="py-16 md:py-32 px-gutter relative overflow-hidden" id="letter">
+<div class="absolute inset-0 bg-secondary-fixed opacity-10"></div>
+<div class="max-w-4xl mx-auto relative z-10">
+<div class="bg-white rounded-[20px] md:rounded-[40px] p-8 md:p-12 lg:p-20 shadow-[0px_20px_60px_rgba(49,100,122,0.1)] relative">
+<div class="absolute top-8 right-8">
+<span class="material-symbols-outlined text-primary-container text-6xl opacity-30">mail</span>
+</div>
+<h2 class="font-display-lg-mobile text-display-lg-mobile text-primary mb-8 border-b-2 border-dashed border-primary-container pb-4">
+                私の心の声
+</h2>
+<div class="stationery-line font-body-lg text-body-lg text-on-surface-variant" style="line-height: 32px;">
+<p class="">今回、6月17日の約束を果たすために参りました。あなたとの時間がとても印象に残っており、台湾に戻ってからも、あの日のやり取りは本当に素敵な思い出です。その時のやり取りや、私が翻訳した内容を覚えていらっしゃいますか？台湾に戻ってから、本当にまた日本に来られるのを楽しみにしていました。本日、またあなたと楽しい時間を過ごせることを願っております。あなたと一緒にいると、とても安心できるからです。</p>
+<p class="" style="margin-top: 32px;">台湾にいる間、Delihel Townのウェブサイトで日記を見かけました。後半の内容を読んでいると、自分が考えすぎていたり、誤解をしていたりするのではないかと感じてしまって。勇気を出して書きました。喜んでいただければ幸いです。</p>
+<p class="" style="margin-top: 32px;">本当に、あなたとの時間は私にとても貴重な体験をくれました。それは台湾では感じたことのない素敵な雰囲気です。</p>
+<p class="" style="margin-top: 32px;">正直に言いますと、この手紙を準備するのはとても緊張しました。あなたの優しさと心遣いに本当に感謝しています。私はこの交流をとても大切に思っています。だからこそ、自分の気持ちを軽い言葉で済ませたくなくて、こうして手紙を書きました。</p>
+<p class="" style="margin-top: 32px;">ただ自分の正直な感情を表現したいだけです。</p>
+<p class="" style="margin-top: 32px;">ここまで読んでくれてありがとうございます。</p>
+</div>
+<div class="absolute -bottom-10 -left-10 float-gentle">
+<span class="material-symbols-outlined text-8xl text-primary/20">pets</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Password Verification Script -->
+<script>
+    // Check if already unlocked
+    function checkUnlockStatus() {
+        const isUnlocked = localStorage.getItem('siteUnlocked');
+        if (isUnlocked === 'true') {
+            document.getElementById('password-overlay').style.display = 'none';
+            document.getElementById('main-content').classList.remove('hidden');
+        }
+    }
+
+    // Check password
+    function checkPassword() {
+        const password = document.getElementById('password-input').value;
+        const errorMessage = document.getElementById('error-message');
+        
+        if (password === '0617') {
+            // Correct password
+            localStorage.setItem('siteUnlocked', 'true');
+            document.getElementById('password-overlay').style.display = 'none';
+            document.getElementById('main-content').classList.remove('hidden');
+        } else {
+            // Wrong password
+            errorMessage.classList.remove('hidden');
+            document.getElementById('password-input').value = '';
+            setTimeout(() => {
+                errorMessage.classList.add('hidden');
+            }, 3000);
+        }
+    }
+
+    // Allow Enter key to submit
+    document.getElementById('password-input').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            checkPassword();
+        }
+    });
+
+    // Check unlock status on page load
+    checkUnlockStatus();
+</script>
+
+
+</body></html>
