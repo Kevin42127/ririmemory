@@ -186,8 +186,22 @@
 <button onclick="checkPassword()" class="w-full bg-primary text-white px-8 py-4 rounded-full font-label-sm text-label-sm hover:bg-primary/90 transition-all shadow-lg">
             解除
 </button>
+<button onclick="showReject()" class="w-full bg-white text-on-surface-variant border-2 border-outline-variant px-8 py-4 rounded-full font-label-sm text-label-sm hover:bg-surface-container transition-all">
+            読みたくない
+</button>
 <p id="error-message" class="text-red-500 text-center font-body-sm text-body-sm hidden">パスワードが間違っています</p>
 </div>
+</div>
+</div>
+<!-- Reject Modal -->
+<div id="reject-modal" class="fixed inset-0 bg-black/50 z-[60] hidden items-center justify-center">
+<div class="bg-white rounded-[20px] p-8 shadow-2xl max-w-sm w-full mx-4 text-center">
+<p class="font-body-lg text-body-lg text-on-surface mb-4">そんなこと言わないで……<br>私、とても悲しくなっちゃう😢</p>
+<img src="https://media0.giphy.com/media/SH2GeSdLkdyxix7B7S/giphy.gif" alt="chiikawa sad" class="w-48 h-auto mx-auto rounded-xl mb-6">
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">ここまで来たんだから、もったいないよ！💕</p>
+<button onclick="hideReject()" class="bg-primary text-white px-8 py-3 rounded-full font-label-sm text-label-sm hover:bg-primary/90 transition-all shadow-lg">
+    やっぱり開く 💌
+</button>
 </div>
 </div>
 <!-- Main Content (hidden until unlocked) -->
@@ -225,12 +239,12 @@
                 私の心の声
 </h2>
 <div class="stationery-line font-body-lg text-body-lg text-on-surface-variant" style="line-height: 32px;">
-<p class="">今回、6月17日の約束を果たすために参りました。あなたとの時間がとても印象に残っており、台湾に戻ってからも、あの日のやり取りは本当に素敵な思い出です。その時のやり取りや、私が翻訳した内容を覚えていらっしゃいますか？台湾に戻ってから、本当にまた日本に来られるのを楽しみにしていました。本日、またあなたと楽しい時間を過ごせることを願っております。あなたと一緒にいると、とても安心できるからです。</p>
-<p class="" style="margin-top: 32px;">台湾にいる間、Delihel Townのウェブサイトで日記を見かけました。後半の内容を読んでいると、自分が考えすぎていたり、誤解をしていたりするのではないかと感じてしまって。勇気を出して書きました。喜んでいただければ幸いです。</p>
-<p class="" style="margin-top: 32px;">本当に、あなたとの時間は私にとても貴重な体験をくれました。それは台湾では感じたことのない素敵な雰囲気です。</p>
-<p class="" style="margin-top: 32px;">正直に言いますと、この手紙を準備するのはとても緊張しました。あなたの優しさと心遣いに本当に感謝しています。私はこの交流をとても大切に思っています。だからこそ、自分の気持ちを軽い言葉で済ませたくなくて、こうして手紙を書きました。</p>
-<p class="" style="margin-top: 32px;">ただ自分の正直な感情を表現したいだけです。</p>
-<p class="" style="margin-top: 32px;">ここまで読んでくれてありがとうございます。</p>
+<p class="">今回、6月17日の約束を果たすために参りました。あなたとの時間が本当に印象深く、台湾に戻ってからも、あの日のやり取りは私にとって一番の宝物です。翻訳を通して心を通わせたあの瞬間を、今でも鮮明に覚えています。</p>
+<p class="" style="margin-top: 32px;">実は、台湾にいる間、Delihel Townであなたの毎日の日記をずっと読んでいました。あなたの言葉に触れるたびに、また日本であなたに会いたいという思いが募り、今日という日を心から待ちわびていました。</p>
+<p class="" style="margin-top: 32px;">ただ、日記を読みながら、正直な気持ちとして少しだけ切なくなることもありました。あなたが他の客人と過ごす素敵な時間を知るたび、「自分は彼女にとって特別になれているのだろうか？」と、考えすぎてしまう自分がいて……。そんな自分の不器用な心が、この手紙を書かせました。</p>
+<p class="" style="margin-top: 32px;">驚かせてしまったらごめんなさい。でも、あなたとの時間は、台湾では味わったことのないほど特別で、とても温かいものです。</p>
+<p class="" style="margin-top: 32px;">この手紙を準備するのはとても緊張しましたが、どうしても今の自分の正直な気持ちを伝えたくて、言葉にしました。あなたの優しさに触れ、こうしてまたあなたと会える奇跡を、私は何よりも大切にしたいと思っています。</p>
+<p class="" style="margin-top: 32px;">忙しい日常の中で、ここまで読んでくれて本当にありがとうございます。今日、またあなたと笑顔で過ごせる時間を心から楽しみにしています。</p>
 </div>
 <div class="absolute -bottom-10 -left-10 float-gentle">
 <span class="material-symbols-outlined text-8xl text-primary/20">pets</span>
@@ -241,13 +255,18 @@
 </div>
 <!-- Password Verification Script -->
 <script>
-    // Check if already unlocked
-    function checkUnlockStatus() {
-        const isUnlocked = localStorage.getItem('siteUnlocked');
-        if (isUnlocked === 'true') {
-            document.getElementById('password-overlay').style.display = 'none';
-            document.getElementById('main-content').classList.remove('hidden');
-        }
+    // Show reject modal
+    function showReject() {
+        const modal = document.getElementById('reject-modal');
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+    }
+
+    // Hide reject modal
+    function hideReject() {
+        const modal = document.getElementById('reject-modal');
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
     }
 
     // Check password
@@ -257,7 +276,6 @@
         
         if (password === '0617') {
             // Correct password
-            localStorage.setItem('siteUnlocked', 'true');
             document.getElementById('password-overlay').style.display = 'none';
             document.getElementById('main-content').classList.remove('hidden');
         } else {
@@ -276,9 +294,6 @@
             checkPassword();
         }
     });
-
-    // Check unlock status on page load
-    checkUnlockStatus();
 </script>
 
 
