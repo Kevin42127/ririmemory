@@ -297,8 +297,46 @@
     // Fill password with 0617
     function fillPassword() {
         const input = document.getElementById('password-input');
+        const submitButton = document.querySelector('#password-overlay button[onclick="checkPassword()"]');
+        
         input.value = '0617';
-        input.focus();
+        input.blur(); // Remove focus to prevent keyboard from showing
+        
+        if (submitButton) {
+            submitButton.focus();
+        }
+    }
+
+    // Show QR Code modal
+    function showQRCode() {
+        const modal = document.getElementById('qr-modal');
+        const qrContainer = document.getElementById('qrcode');
+        
+        // Clear previous QR code
+        qrContainer.innerHTML = '';
+        
+        // Generate QR code for current page URL
+        const currentUrl = window.location.href;
+        QRCode.toCanvas(currentUrl, function(error, canvas) {
+            if (error) {
+                console.error(error);
+                return;
+            }
+            canvas.style.width = '200px';
+            canvas.style.height = '200px';
+            qrContainer.appendChild(canvas);
+        });
+        
+        // Show modal
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+    }
+
+    // Hide QR Code modal
+    function hideQRCode() {
+        const modal = document.getElementById('qr-modal');
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
     }
 
     // Check password
